@@ -8,6 +8,7 @@ ENV HOME="/" \
 
 COPY prebuildfs /
 # Install required system packages and dependencies
+RUN mkdir -p /opt/bitnami/nginx/html
 RUN mkdir -p /opt/bitnami/nginx/logs/
 RUN touch /opt/bitnami/nginx/logs/access.log
 RUN touch /opt/bitnami/nginx/logs/error.log

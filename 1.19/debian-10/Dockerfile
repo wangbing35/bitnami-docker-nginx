@@ -1,5 +1,5 @@
-FROM bitnami/minideb:buster
-LABEL maintainer "Bitnami <containers@bitnami.com>"
+FROM debian:buster
+LABEL maintainer "w00412055"
 
 ENV HOME="/" \
     OS_ARCH="arm64" \
@@ -13,9 +13,9 @@ COPY gosu-1.12.0-2-linux-arm64-debian-10.tar.gz /tmp/bitnami/pkg/cache/
 COPY nginx-1.19.9-0-linux-arm64-debian-10.tar.gz /tmp/bitnami/pkg/cache/
 COPY render-template-1.0.0-3-linux-arm64-debian-10.tar.gz /tmp/bitnami/pkg/cache/
 
-#RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "render-template" "1.0.0-3" 
-#RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "nginx" "1.19.8-0" 
-#RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "gosu" "1.12.0-2" 
+RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "render-template" "1.0.0-3" 
+RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "nginx" "1.19.8-0" 
+RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "gosu" "1.12.0-2" 
 RUN chmod g+rwX /opt/bitnami
 RUN ln -sf /dev/stdout /opt/bitnami/nginx/logs/access.log
 RUN ln -sf /dev/stderr /opt/bitnami/nginx/logs/error.log

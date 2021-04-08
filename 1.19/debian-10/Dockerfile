@@ -1,5 +1,5 @@
-FROM bitnami/minideb:buster
-LABEL maintainer "Bitnami <containers@bitnami.com>"
+FROM debian:buster
+LABEL maintainer "w00412055"
 
 ENV HOME="/" \
     OS_ARCH="arm64" \

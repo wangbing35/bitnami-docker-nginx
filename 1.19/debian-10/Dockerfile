@@ -1,4 +1,4 @@
-FROM docker.io/bitnami/minideb:buster
+FROM bitnami/minideb:buster
 LABEL maintainer "Bitnami <containers@bitnami.com>"
 
 ENV HOME="/" \

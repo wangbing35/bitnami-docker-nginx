@@ -10,11 +10,11 @@ COPY prebuildfs /
 # Install required system packages and dependencies
 RUN install_packages acl ca-certificates curl gzip libc6 libgeoip1 libpcre3 libssl1.1 procps tar zlib1g
 COPY gosu-1.12.0-2-linux-arm64-debian-10.tar.gz /tmp/bitnami/pkg/cache/
-COPY nginx-1.19.8-0-linux-arm64-debian-10.tar.gz /tmp/bitnami/pkg/cache/
+COPY nginx-1.19.9-0-linux-arm64-debian-10.tar.gz /tmp/bitnami/pkg/cache/
 COPY render-template-1.0.0-3-linux-arm64-debian-10.tar.gz /tmp/bitnami/pkg/cache/
 
 RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "render-template" "1.0.0-3" 
-RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "nginx" "1.19.8-0" 
+RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "nginx" "1.19.9-0" 
 RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "gosu" "1.12.0-2" 
 RUN chmod g+rwX /opt/bitnami
 RUN ln -sf /dev/stdout /opt/bitnami/nginx/logs/access.log
